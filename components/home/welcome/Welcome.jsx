@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 
 import styles from './welcome.style'
 import { useRouter } from 'expo-router'
@@ -11,6 +11,16 @@ const Welcome = () => {
       <View style={styles.container}>
         <Text style={styles.userName}>Hello Shubham</Text>
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
+      </View>
+
+      <View style={styles.searchContainer}>
+      <View style={styles.searchWrapper}>
+          <TextInput
+            style={styles.searchInput}
+            onChangeText={(text) => setSearchTerm(text)}
+            placeholder='What are you looking for?'
+          />
+        </View>
       </View>
     </View>
   )
